@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           09.09.2023, 23:33:57
+@name           09.09.2023, 23:00:00
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        0.0.2
 @description    Custom styles for Ulbi TV course platform to add dark theme, fix videoplayer size and other minor fixes
 @author         asoco
 ==/UserStyle== */
@@ -34,17 +34,17 @@
 	}
 
 
-	.gc-main-content > .container {
+	.gc-main-content>.container {
 		width: 90% !important;
 		margin: auto !important;
 	}
 
-	.lt-block-wrapper > .container {
+	.lt-block-wrapper>.container {
 		margin: auto !important;
 	}
 
 	@media screen and (max-width:1500px) {
-		.gc-main-content > .container {
+		.gc-main-content>.container {
 			width: 100% !important;
 			margin: auto !important;
 		}
@@ -154,7 +154,7 @@
 		color: var(--custom-color-text);
 	}
 
-	.user-image-wrapper > a > span {
+	.user-image-wrapper>a>span {
 		/* Image container */
 		width: 50px;
 		height: 50px;
@@ -170,7 +170,7 @@
 		filter: invert(1) brightness(2);
 	}
 
-	.user-default-profile-image + span {
+	.user-default-profile-image+span {
 		color: #fff;
 		bottom: -36% !important;
 		position: unset !important;
@@ -246,7 +246,7 @@
 		padding: 0;
 	}
 
-	.emoji-menu > div {
+	.emoji-menu>div {
 		background: var(--custom-color-bg);
 		border: 1px solid #4f4f4f;
 	}
@@ -292,7 +292,7 @@
 		overflow: unset;
 	}
 
-	.comments-tree .level-1 > .comment-wrapper > .comment > .text {
+	.comments-tree .level-1>.comment-wrapper>.comment>.text {
 		margin-bottom: 0;
 	}
 
@@ -393,9 +393,14 @@
 	.row.header-view {
 		display: flex;
 		align-items: center;
+		margin-right: 12px;
 	}
 
-	.row.header-view > .text-center {
+	.lesson-header-block .row {
+		margin: 0;
+	}
+
+	.row.header-view>.text-center {
 		padding: unset !important;
 	}
 
@@ -474,21 +479,21 @@
 
 
 	/* It's should been a file list, but now it's for all tables */
-	.table > tbody > tr > td,
-	.table > tbody > tr > th,
-	.table > tfoot > tr > td,
-	.table > tfoot > tr > th,
-	.table > thead > tr > td,
-	.table > thead > tr > th {
+	.table>tbody>tr>td,
+	.table>tbody>tr>th,
+	.table>tfoot>tr>td,
+	.table>tfoot>tr>th,
+	.table>thead>tr>td,
+	.table>thead>tr>th {
 		border-top: none;
 	}
 
-	.table > tbody > tr:not(:first-child) > th,
-	.table > tbody > tr:not(:first-child) > td,
-	.table > tfoot > tr:not(:first-child) > td,
-	.table > tfoot > tr:not(:first-child) > th,
-	.table > thead > tr:not(:first-child) > td,
-	.table > thead > tr:not(:first-child) > th {
+	.table>tbody>tr:not(:first-child)>th,
+	.table>tbody>tr:not(:first-child)>td,
+	.table>tfoot>tr:not(:first-child)>td,
+	.table>tfoot>tr:not(:first-child)>th,
+	.table>thead>tr:not(:first-child)>td,
+	.table>thead>tr:not(:first-child)>th {
 		border-top: 1px solid var(--custom-color-border);
 	}
 
