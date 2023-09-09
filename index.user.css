@@ -1,0 +1,585 @@
+/* ==UserStyle==
+@name           09.09.2023, 23:33:57
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Custom styles for Ulbi TV course platform to add dark theme, fix videoplayer size and other minor fixes
+@author         asoco
+==/UserStyle== */
+@-moz-document domain("ulbitv.ru") {
+
+	/* Root elements */
+	:root {
+		--custom-color-bg: #161718;
+		--custom-color-border: #333638;
+		--custom-color-text: #afb3b6;
+		--accent-color: #61abf5;
+		--accent-color-hue: 210;
+		/* used to keep accent color style and able to customize it for specific case*/
+	}
+
+	body,
+	.gc-main-content {
+		background: var(--custom-color-bg);
+		color: var(--custom-color-text);
+	}
+
+	a {
+		color: var(--accent-color);
+	}
+
+	a:focus,
+	a:hover {
+		color: hsl(var(--accent-color-hue), 88%, 80%);
+		text-decoration: underline;
+	}
+
+
+	.gc-main-content > .container {
+		width: 90% !important;
+		margin: auto !important;
+	}
+
+	.lt-block-wrapper > .container {
+		margin: auto !important;
+	}
+
+	@media screen and (max-width:1500px) {
+		.gc-main-content > .container {
+			width: 100% !important;
+			margin: auto !important;
+		}
+	}
+
+	.block-set {
+		color: var(--custom-color-text);
+	}
+
+	/* Left navbar */
+	.custom-menu .gc-account-leftbar {
+		background-color: var(--custom-color-bg);
+		border-right: 1px solid var(--custom-color-border);
+	}
+
+	.custom-menu .gc-account-leftbar .gc-account-user-menu {
+		background-color: var(--custom-color-bg);
+	}
+
+	.custom-menu .gc-account-leftbar .gc-account-user-menu li a {
+		background-color: var(--custom-color-bg);
+		border-right: 0px solid hsl(var(--accent-color-hue), 56%, 46%);
+		-webkit-transition: .1s background-color, .1s border-right, .1s color;
+		-o-transition: .1s background-color, .1s border-right, .1s color;
+		transition: .1s background-color, .1s border-right, .1s color;
+	}
+
+	.custom-menu .gc-account-leftbar .gc-account-user-menu li:not(.active):not(.selected) a:hover {
+		background-color: rgba(52, 122, 183, 0.2);
+		border-right: 1px solid hsl(var(--accent-color-hue), 56%, 46%);
+	}
+
+	.custom-menu .gc-account-leftbar .gc-account-user-menu li.active a,
+	.custom-menu .gc-account-leftbar .gc-account-user-menu li.selected a {
+		color: #fff;
+		background-color: rgba(52, 122, 183, 0.2);
+		/* border: 1px solid #fff; */
+		border-right: 4px solid hsl(var(--accent-color-hue), 56%, 46%);
+	}
+
+	.custom-menu .gc-account-leftbar .gc-account-user-menu li.active a .menu-item-icon {
+		filter: grayscale(1) invert(1);
+	}
+
+	.custom-menu .gc-account-leftbar li.active .menu-item-label,
+	.custom-menu .gc-account-leftbar li.selected .menu-item-label {
+		color: #ffffff;
+		font-weight: bold;
+	}
+
+	.custom-menu .gc-account-leftbar .gc-account-user-submenu-bar,
+	.custom-menu .gc-account-leftbar .gc-account-user-submenu-bar-notifications_button_small .notification-group.notification-status-viewed {
+		background-color: #111213;
+	}
+
+	.custom-menu .gc-account-user-submenu-bar .gc-account-user-submenu li a {
+		-webkit-transition: .1s background-color, .1s border-right;
+		-o-transition: .1s background-color, .1s border-right;
+		transition: .1s background-color, .1s border-right;
+		border-right: 0px solid #337ab7;
+	}
+
+	.custom-menu .gc-account-user-submenu-bar .gc-account-user-submenu li a:hover {
+		background-color: #337ab726;
+		border-right: 4px solid #337ab7;
+	}
+
+	/* Comments*/
+	.simple-answer {
+		border: 1px solid var(--custom-color-border);
+		border-radius: 6px;
+		background: #00000030;
+		margin-bottom: 12px;
+		padding: 18px 18px;
+		display: flex;
+	}
+
+	.answer-comment.textarea-block {
+		width: initial;
+		flex: 1;
+	}
+
+	.simple-answer.user-answer .new-comment.new-answer {
+		flex: 1;
+		justify-content: center;
+		display: flex;
+		align-items: flex-start;
+	}
+
+	div.lesson-header-block.row-section {
+		background: var(--custom-color-bg) !important;
+		color: var(--custom-color-text);
+	}
+
+	.lesson-answer-comment {
+		background: rgb(0 0 0 / 20%);
+		padding: 8px 12px;
+		border-radius: 6px;
+	}
+
+	.comment-list {
+		background: #ffffff08;
+		padding: 1px 13px;
+	}
+
+	.comments-tree .text {
+		color: var(--custom-color-text);
+	}
+
+	.user-image-wrapper > a > span {
+		/* Image container */
+		width: 50px;
+		height: 50px;
+		display: block;
+	}
+
+	img.user-profile-image {
+		border-radius: 50%;
+	}
+
+	.comment-form-wrapper img.user-profile-image.user-default-profile-image {
+		mix-blend-mode: screen;
+		filter: invert(1) brightness(2);
+	}
+
+	.user-default-profile-image + span {
+		color: #fff;
+		bottom: -36% !important;
+		position: unset !important;
+		width: 50px;
+		display: none;
+	}
+
+	.simple-answer .new-comment-textarea,
+	.comment-form-wrapper .new-comment-textarea,
+	.emoji-wysiwyg-editor {
+		background: #161718;
+		border: 2px solid var(--custom-color-border);
+		padding: 12px;
+		min-height: calc(36px + 1em) !important;
+		resize: vertical !important;
+		color: var(--custom-color-text);
+		-webkit-transition: .1s border;
+		-o-transition: .1s border;
+		transition: .1s border;
+	}
+
+	.simple-answer .new-comment-textarea:focus,
+	.comment-form-wrapper .new-comment-textarea:focus,
+	.emoji-wysiwyg-editor:focus {
+		border: 2px solid var(--accent-color);
+		outline: none;
+	}
+
+
+	.comment-form-wrapper .new-comment .btn-send,
+	.new-answer .btn-send {
+		color: #ffffff;
+		background: #161718;
+		border: 1px solid var(--custom-color-border);
+		-webkit-transition: .1s all;
+		-o-transition: .1s all;
+		transition: .1s all;
+		display: flex !important;
+		gap: 12px;
+		align-items: center;
+		justify-content: center;
+		padding: 8px 12px;
+		border-radius: 3px;
+		margin-top: 10px;
+		align-self: flex-start;
+		outline: 0px solid var(--custom-color-border);
+		font-weight: bold;
+	}
+
+	button.btn.btn-primary.btn-send:hover,
+	.new-answer .btn-send:hover,
+	button.btn.btn-primary.btn-send:focus,
+	.new-answer .btn-send:focus {
+		outline: 4px solid var(--custom-color-border);
+	}
+
+	.textarea-block input[type="file"]:focus {
+		background: var(--custom-color-border);
+	}
+
+	button.btn.btn-primary.btn-send:active,
+	.new-answer .btn-send:active {
+		-webkit-transition: 0s all;
+		-o-transition: 0s all;
+		transition: 0s all;
+		background: var(--accent-color);
+		outline: 4px solid hsl(var(--accent-color-hue), 56%, 26%);
+	}
+
+
+	button.btn.btn-primary.btn-send .text {
+		color: #ffffff;
+		padding: 0;
+	}
+
+	.emoji-menu > div {
+		background: var(--custom-color-bg);
+		border: 1px solid #4f4f4f;
+	}
+
+	.emoji-menu a:hover {
+		background-color: rgba(255, 255, 255, .1);
+	}
+
+	.emoji-menu a:active {
+		background-color: rgba(255, 255, 255, .3);
+	}
+
+	.textarea-block {
+		width: initial !important;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.user-answer .comment-form-wrapper {
+		margin-bottom: 0;
+		padding: 0 0px 12px;
+	}
+
+	.comments-tree,
+	.comments-tree .template-links a {
+		margin-right: 0;
+	}
+
+	.comments-tree .level-1 .comment-wrapper {
+		padding-right: 0;
+	}
+
+	.user-answer:not(.simple-answer) {
+		border-top: none;
+		background: #00000030;
+		margin-bottom: 12px;
+		padding: 18px 18px;
+		border: 1px solid var(--custom-color-border);
+	}
+
+	.comment-form-wrapper .new-comment .textarea-block,
+	.new-comment .textarea-block {
+		overflow: unset;
+	}
+
+	.comments-tree .level-1 > .comment-wrapper > .comment > .text {
+		margin-bottom: 0;
+	}
+
+
+	.b-notifications-subscribe .button,
+	.b-like .button,
+	.b-like .positive-count .icon,
+	.b-like .positive-count .value {
+		/* Overriding colors for comment link styled elements */
+		color: var(--accent-color);
+	}
+
+	/* fixes */
+	.answer-content {
+		/* Comments body have weird margins, doesn't really changes something :D */
+		margin: unset;
+	}
+
+	a.anchor {
+		/* Weird empty element which adds unwanted paddings */
+		display: none;
+	}
+
+	/* Selection and Scrollbars */
+	::-moz-selection {
+		/* Code for Firefox */
+		background: hsla(var(--accent-color-hue), 86%, 67%, 0.451);
+	}
+
+	::selection {
+		background: hsla(var(--accent-color-hue), 86%, 67%, 0.451);
+	}
+
+	/* Firefox */
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: #ffffff var(--custom-color-bg);
+	}
+
+	/* Chrome, Edge, and Safari */
+	*::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	*::-webkit-scrollbar-track {
+		background: var(--custom-color-bg);
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background-color: #ffffff;
+		border-radius: 16px;
+		border: 4px solid var(--custom-color-bg);
+	}
+
+
+	/* Video */
+	.lite-page .lt-video .container {
+		max-width: unset !important;
+		max-height: 60vh;
+	}
+
+	.lt-video .vhi-iframe,
+	.lt-video .modal-block-content {
+		max-height: 70vh;
+	}
+
+	.lt-video .modal-block-content.block-box.col-md-12 {
+		padding: unset !important;
+	}
+
+
+	/* Heading */
+	.center-block {
+		max-width: unset !important;
+	}
+
+	div.lesson-header-block.row-section {
+		border-bottom: 1px solid var(--custom-color-border) !important;
+	}
+
+	.page-header {
+		border-bottom-color: var(--custom-color-border);
+		padding: 0;
+		margin: 20px 0 10px;
+	}
+
+	h2.lesson-title-value {
+		text-align: left;
+		font-size: 29px;
+	}
+
+	@media screen and (max-width:1500px) {
+		h2.lesson-title-value {
+			margin-bottom: 0.5em !important;
+		}
+	}
+
+	.row.header-view {
+		display: flex;
+		align-items: center;
+	}
+
+	.row.header-view > .text-center {
+		padding: unset !important;
+	}
+
+	.lesson-navigation {
+		padding-top: 0 !important;
+	}
+
+	@media screen and (min-width:1500px) {
+
+		.lesson-navigation table {
+			display: block;
+		}
+
+		.lesson-header-block.row-section {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.lesson-navigation table tbody tr {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1em 1fr;
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas: "lessonState lessonState" "prevLesson nextLesson";
+		}
+
+		.lesson-navigation td {
+			width: 100%;
+		}
+
+		.lesson-navigation td:has(.user-state-reached) {
+			display: flex;
+			gap: 12px;
+			align-items: center;
+			justify-content: right;
+			flex-direction: row-reverse;
+			grid-area: lessonState;
+		}
+
+		.lesson-navigation td:nth-child(1) {
+			grid-area: prevLesson;
+		}
+
+		.lesson-navigation td:nth-child(3) {
+			grid-area: nextLesson;
+			padding-right: 0 !important;
+		}
+	}
+
+	@media screen and (min-width:1500px) {
+
+		.lesson-navigation td:has(.user-state-reached) {
+			-ms-grid-row: 1;
+			-ms-grid-column: 1;
+			-ms-grid-column-span: 3;
+		}
+
+		.lesson-navigation td:nth-child(1) {
+			-ms-grid-row: 3;
+			-ms-grid-column: 1;
+		}
+
+		.lesson-navigation td:nth-child(3) {
+			-ms-grid-row: 3;
+			-ms-grid-column: 3;
+		}
+	}
+
+
+	.user-state-reached {
+		text-transform: uppercase;
+		font-size: 11px;
+		opacity: 0.5;
+	}
+
+
+	/* It's should been a file list, but now it's for all tables */
+	.table > tbody > tr > td,
+	.table > tbody > tr > th,
+	.table > tfoot > tr > td,
+	.table > tfoot > tr > th,
+	.table > thead > tr > td,
+	.table > thead > tr > th {
+		border-top: none;
+	}
+
+	.table > tbody > tr:not(:first-child) > th,
+	.table > tbody > tr:not(:first-child) > td,
+	.table > tfoot > tr:not(:first-child) > td,
+	.table > tfoot > tr:not(:first-child) > th,
+	.table > thead > tr:not(:first-child) > td,
+	.table > thead > tr:not(:first-child) > th {
+		border-top: 1px solid var(--custom-color-border);
+	}
+
+
+
+	/* Other than video pages */
+	.stream-table tr td {
+		padding: 6px 10px;
+	}
+
+	.stream-table tr td:hover {
+		background: unset;
+	}
+
+	.stream-table tr a {
+		display: block;
+		padding: 12px;
+		border-radius: 6px;
+		color: var(--custom-color-text);
+		background: hsl(var(--accent-color-hue), 3%, 13%);
+		border: 1px solid hsl(var(--accent-color-hue), 3%, 19%);
+		-webkit-transition: .1s background, .1s border;
+		-o-transition: .1s background, .1s border;
+		transition: .1s background, .1s border;
+	}
+
+	.stream-table tr a:hover {
+		background: hsl(var(--accent-color-hue), 3%, 16%);
+		border: 1px solid hsl(var(--accent-color-hue), 3%, 30%);
+	}
+
+	.lesson-list {
+		background: none;
+	}
+
+	.user-state-bg,
+	.lesson-list li .info {
+		background: none;
+	}
+
+	.user-state-bg {
+		color: var(--custom-color-text);
+		background: hsl(var(--accent-color-hue), 3%, 13%);
+		border: 1px solid hsl(var(--accent-color-hue), 3%, 19%);
+		-webkit-transition: .1s background, .1s border;
+		-o-transition: .1s background, .1s border;
+		transition: .1s background, .1s border;
+	}
+
+	.user-state-bg:hover {
+		color: var(--custom-color-text);
+		background: hsl(var(--accent-color-hue), 3%, 16%);
+		border: 1px solid hsl(var(--accent-color-hue), 3%, 30%);
+	}
+
+	.lesson-list li.user-state-reached .info {
+		border-left-color: hsl(var(--accent-color-hue), 3%, 19%);
+		-webkit-transition: .1s border;
+		-o-transition: .1s border;
+		transition: .1s border;
+	}
+
+	.user-state-bg:hover .info {
+		border-left-color: hsl(var(--accent-color-hue), 3%, 30%);
+	}
+
+	.user-state-reached {
+		opacity: 1;
+	}
+
+	.lesson-list__video-watched {
+		color: #fcfcfc;
+		background-color: #c4c4c424;
+	}
+
+	.page-header .content-menu {
+		border-color: var(--custom-color-border);
+	}
+
+	.stream-title {
+		color: var(--accent-color);
+	}
+
+
+	/* xdget */
+	.xdget-block .center-block .row {
+		background: var(--custom-color-bg);
+		color: var(--custom-color-text);
+	}
+
+	.xdget-training .xdget-container:has(.xdget-lessonList) {
+		width: 100%;
+	}
+}
