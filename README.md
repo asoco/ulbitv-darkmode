@@ -16,3 +16,6 @@ Installation:
 - Install [Stylus](https://github.com/openstyles/stylus/) (Available for [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) and [Firefox](https://addons.mozilla.org/firefox/addon/styl-us/))
 - Import style from [here](https://userstyles.world/style/11991/ulbitv-course-dark-theme)
 - Done.
+
+Demo:
+![screenshot of dark theme](https://userstyles.world/preview/11991/0.jpeg)
