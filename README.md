@@ -14,5 +14,5 @@ Implemented:
 
 Installation:
 - Install [Stylus](https://github.com/openstyles/stylus/) (Available for [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) and [Firefox](https://addons.mozilla.org/firefox/addon/styl-us/))
-- Import style (there will be link later)
+- Import style from [here](https://userstyles.world/style/11991/ulbitv-course-dark-theme)
 - Done.
